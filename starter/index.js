@@ -92,4 +92,15 @@ let totalMonths = finances.length;       // toatal number of months.
 let totalProfitLoss = 0;
 let monthlyChanges = [];
 
-console.log("Total Months: " + finances.length); //result
+console.log("Total Months: " + totalMonths); //result
+
+//The net total amount of Profit/Losses over the entire period
+
+for (let i = 0; i < finances.length; i++){
+  totalProfitLoss += finances[i][1];
+  if (i > 0) {
+    let change = finances [i][1] - finances[ i - 1][1];
+  monthlyChanges.push(change); 
+ }
+}
+console.log("Total Profit/Loss: $ " + totalProfitLoss);   // result
