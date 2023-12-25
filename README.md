@@ -7,7 +7,7 @@ Analysing 2D Array of a financial data
 https://github.com/udani521/Console-Finances/blob/main/Image/Screenshot%202023-12-25%20155503.png
 
 ##Deploy site
-https://udani521.github.io/Bootstrap-Portfolio/
+https://udani521.github.io/Console-Finances/
 
 ##Overview
 
