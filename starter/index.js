@@ -86,6 +86,9 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+console.log("Financial Analysis");
+console.log("-------------------");
+
 
 // Initialize variables
 let totalMonths = finances.length;       // toatal number of months.
@@ -104,3 +107,31 @@ for (let i = 0; i < finances.length; i++){
  }
 }
 console.log("Total Profit/Loss: $ " + totalProfitLoss);   // result
+
+
+// calculate the average of the change in profit/losses.
+
+let totalChanges = monthlyChanges.reduce((acc, val) => acc + val, 0);
+let averageChange = totalChanges / (totalMonths - 1);
+
+// Display average change with the nearest 100th
+
+let FixedpointAverageChange = averageChange.toFixed(2);
+console.log("Average Change: $" + FixedpointAverageChange);  //result
+
+
+
+//The greatest increase in Profit/Losses (date and amount) over the entire period
+
+let maxIncrease =Math.max(...monthlyChanges);
+let maxIncreaseIndex = monthlyChanges.indexOf(maxIncrease) + 1;  //adding 1 to get the right index
+
+console.log("Greatest Increase in Profit/Losses: " + finances[maxIncreaseIndex][0] + " ($ " + maxIncrease + ")");
+
+
+//The greatest decrease in Profit/Losses (date and amount) over the entire period
+
+let maxDecrease = Math.min(...monthlyChanges);
+let maxDecreaseIndex = monthlyChanges.indexOf(maxDecrease) + 1; //adding 1 to get the right index
+
+console.log("Greatest Increase in Profit/Losses: " + finances[maxDecreaseIndex][0] + " ($ " + maxDecrease + ")");
